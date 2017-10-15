@@ -1,0 +1,39 @@
+<div class="animated fadeIn">
+    <div class="card">
+        <div class="card-header">
+            Create Task
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>Task Message</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="eachData in vm.uiConfig.allTaskList">
+                    <td>{{eachData.id}}</td>
+                    <td ng-click="vm.editTaskById(eachData.id)">{{eachData.taskMessage}}</td>
+                    <td>{{eachData.createdAt | date}}</td>
+                    <td>
+                        <span class="badge badge-success">Active</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+                <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

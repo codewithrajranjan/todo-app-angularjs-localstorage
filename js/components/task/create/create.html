@@ -1,0 +1,19 @@
+<div class="animated fadeIn">
+
+
+    <div class="card">
+        <div class="card-header">
+            Create Task
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Task Message</label>
+                <textarea id="textarea-input" ng-model="vm.uiConfig.model.taskMessage" name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" ng-click="vm.createTask(vm.uiConfig.model)" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Create</button>
+        </div>
+    </div>
+
+</div>
