@@ -1,6 +1,4 @@
 <div class="animated fadeIn">
-
-
     <div class="card">
         <div class="card-header">
             Create Task
@@ -12,7 +10,8 @@
             </div>
         </div>
         <div class="card-footer">
-            <button type="button" ng-click="vm.createTask(vm.uiConfig.model)" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Create</button>
+            <button type="button" ng-if="vm.uiConfig.editMode===false" ng-click="vm.createTask(vm.uiConfig.model)" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Create</button>
+            <button type="button" ng-if="vm.uiConfig.editMode===true" ng-click="vm.updateTask(vm.uiConfig.model)" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Update</button>
         </div>
     </div>
 

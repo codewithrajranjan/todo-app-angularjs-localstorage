@@ -39,7 +39,7 @@ angular.module('task-module',[])
             },
             taskDataResolved:function(taskRESTService,$stateParams){
                 var taskId = $stateParams.id;
-                return taskRESTService.getTaskById(id);
+                return taskRESTService.readTaskById(taskId);
             }
         }
     }).state('app.task.read', {
@@ -50,7 +50,6 @@ angular.module('task-module',[])
         },
         controller : 'taskReadController',
         controllerAs : 'vm'
-    })
-;
+    });
 }]);
 

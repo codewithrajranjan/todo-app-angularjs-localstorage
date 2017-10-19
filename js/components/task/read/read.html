@@ -1,7 +1,7 @@
 <div class="animated fadeIn">
     <div class="card">
         <div class="card-header">
-            Create Task
+            All Task
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -9,17 +9,23 @@
                     <tr>
                         <th>&nbsp;</th>
                         <th>Task Message</th>
-                        <th>Date</th>
+                        <th>Created Date</th>
+                        <th>Updated Date</th>
                         <th>Status</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="eachData in vm.uiConfig.allTaskList">
-                    <td>{{eachData.id}}</td>
+                <tr ng-repeat="eachData in vm.uiConfig.allTaskList track by $index">
+                    <td>{{$index+1}}</td>
                     <td ng-click="vm.editTaskById(eachData.id)">{{eachData.taskMessage}}</td>
                     <td>{{eachData.createdAt | date}}</td>
+                    <td>{{eachData.updatedAt | date}}</td>
                     <td>
                         <span class="badge badge-success">Active</span>
+                    </td>
+                    <td>
+                        <span class="badge badge-success" ng-click="vm.deleteTaskById(eachData.id)">Delete</span>
                     </td>
                 </tr>
                 </tbody>
